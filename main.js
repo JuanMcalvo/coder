@@ -1,45 +1,54 @@
 const prec_1 = 13000;
-const prec_2 = 12000;
-const prec_3 = 15000;
-const prec_4 = 13500;
-const sumar = 'sumar';
-const restar = 'restar';
-let total = number;
-
+const prec_2 = 16000;
+const prec_3 = 14000;
+const prec_4 = 15000;
+let precio = 0;
+let cant = 0;
+let confi = String;
+/* alert("Hola"); */
 do {
-  let id_prod = parseInt (prompt ('Seleccione Productos para agregar al carrito /n 1 - Google Pixel 5  $ 13.000 /n 2 - Samsung Galaxy S21  $ 12.000 /n 3 - Xiaomi Mi 11 $ 15.000 /n 4 -OnePlus 9 Pro $13.500  '));
+    let opcion = parseInt(prompt('Seleccione producto para agregar al carro\n' +   '1- producto1 $13000\n2- producto 2 $ 14000\n3- producto 3 $15000 \n 4- producto 4 $16000'));
+    console.log(opcion);
+    switch (opcion) {
+        case 1:
+            cant = + sumarcantidades(cant);
+            precio = + sumarprecio(prec_1,cant);
+            console.log(cant);
+            console.log(precio);
+            break;
+        case 2:
+            cant = + sumarcantidades(cant);
+            precio = + sumarprecio(prec_2,cant);
+            break;
+        case 3:
+            cant = + sumarcantidades(cant);
+            precio = + sumarprecio(prec_3,cant);
+            break;
+        case 4: /*  */
+        cant = + sumarcantidades(cant);
+        precio = + sumarprecio(prec_4,cant);
+            break;
+        default: alert('ingrese una opcion valida');
+    }
+   if (precio>0){
+   do {
+        confi = prompt ("Desea seguir comprando?\n Ingrese:\n \"Si\" , para continuar\n \"No\" , para terminar la compra");
+        confi= confi.toLowerCase();
+        console.log(confi);
+   } while (confi !== "si" && confi !== "no");
+   }
+        
+} while (confi !== 'no');
+console.log("sale");
+mostrar();
 
-  switch(id_prod){
-      case 1:   let = 
-                total = total_prod (id_prod,sumar);
-                prec_total = + prec_1;
-                Break;
-      case 2:  total = total_prod (id_prod, sumar);
-                prec_total = + prec_2;
-                Break;
-      case 3:  total = total_prod (id_prod, sumar);
-                prec_total = + prec_3;
-                Break;
-      case 4:  total = total_prod (id_prod, sumar);
-                prec_total = + prec_4;
-                Break;
-      case 5: alert('Ingrese una opcion validad'):
 
+function sumarprecio(precio, cantidades) {
+    return precio * cantidades;
 }
-finalizarCompra= prompt ("Que desea hacer \n 1 - Seguir agregando al carrito \n 2 - Quitar prodcuto del carrito \n 3 - Terminar y pagar");//// funcion de agregar al carro
-
-} while (si)
-
-function total_prod (prod,operacion) {
-     if (operacion == sumar)
-            return= total + 1;
-        else {
-            if (operacion == restar) {
-                return = total-1;
-            }
-        }
+function sumarcantidades (cant) {
+    return cant +1;
 }
-function total_precio (prod , precio){
-    return= prod * precio;
+function mostrar (){
+      alert('Total de pructos ' + cant + ' Total a pagar ' + precio);    
 }
-
